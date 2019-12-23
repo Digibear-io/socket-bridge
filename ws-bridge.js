@@ -6,6 +6,21 @@ const tcp = require("net");
 const tls = require("tls");
 const Anser = require("anser");
 
+const help = `
+WebSocket Bridge 
+
+Connects a TCP or TLS port to a Websocket connection. if not telnet port
+is supplied the bridge will default to 4201.  If no Websocket port is 
+defined it will default to 4203.
+
+usage: ws-bridge [-c|--connect][--help][--telnet <port>][--websocket <port>]
+                 [-v --verbose][-a --ansi-to-html][-j --json]
+                 [-k --keepalive][-t --tls]
+                 
+                 
+2019 Lemuel Canady, Jr
+`.trim();
+
 const listen = (
   wsport,
   tcpport,
@@ -91,10 +106,15 @@ wsp = argv.websocket || 4203;
 tel = argv.telnet || 4201;
 
 // Start the server!
-listen(wsp, tel, {
-  verbose: argv.v,
-  secure: argv.tls,
-  keepalive: argv.keepalive,
-  json: argv.j,
-  html: argv.m
-});
+
+if (argv.connect || argv.c) {
+  listen(wsp, tel, {
+    verbose: argv.v || argv.verbose,
+    secure: argv.tls || argv.t,
+    keepalive: argv.keepalive || argv.k,
+    json: argv.j || argv.json,
+    html: argv.a || argv.ansi - to - html
+  });
+} else {
+  console.log(help);
+}
