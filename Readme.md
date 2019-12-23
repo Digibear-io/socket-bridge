@@ -9,8 +9,5 @@ A simple library to bridge a connection between a TCP/TLS and a Websocket connec
 ## Usage
 
 `ws-bridge --websocket 2000 --telnet 2001`
+
 If no ports are supplied then it defaults to `4201` for tcp and `4204` for the Websocket port.
-
-## Caveate
-
-As of right now the the bridge only supports text frames.
