@@ -1,0 +1,33 @@
+{
+  "name": "@digibear/socket-bridge",
+  "version": "1.0.0",
+  "description": "A Websocket bridge between WS and TCP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Digibear-io/ws-bridge.git"
+  },
+  "keywords": [
+    "MUX",
+    "MUD",
+    "MUSH",
+    "Telnet",
+    "WebSocket",
+    "WS",
+    "TSL",
+    "Minimist"
+  ],
+  "author": "Lemuel Canady, Jr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Digibear-io/ws-bridge/issues"
+  },
+  "homepage": "https://github.com/Digibear-io/ws-bridge#readme",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "ws": "^7.2.1"
+  }
+}
