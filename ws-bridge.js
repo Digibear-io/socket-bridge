@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const WebSocket = require("ws");
-const argv = require("minimist")(process.argv.split(2));
+const argv = require("minimist")(process.argv.slice(2));
 const tcp = require("net");
 const tls = require("tls");
 
@@ -10,7 +10,7 @@ const listen = (
   tcpport,
   { verbose = false, secure = false, keepalive = false }
 ) => {
-  const wss = new WebSocket.server({ port: wsport }, () => {
+  const wss = new WebSocket.Server({ port: wsport }, () => {
     console.info(`WebSocket port listening: ${wsport}`);
     if (verbose) console.log("Verbose mode activated.");
     if (verbose && secure) console.log("Secure mode activated.");
@@ -58,8 +58,8 @@ const listen = (
   });
 };
 
-wsp = argv.websocket ?? 4203;
-tel = argv.telnet ?? 4201;
+wsp = argv.websocket || 4203;
+tel = argv.telnet || 4201;
 
 // Start the server!
 listen(wsp, tel, {
