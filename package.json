@@ -2,10 +2,11 @@
   "name": "@digibear/socket-bridge",
   "version": "1.0.0",
   "description": "A Websocket bridge between WS and TCP",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "main": "ws-bridge.js",
+  "bin": {
+    "ws-bridge": "ws-bridge.js"
   },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Digibear-io/ws-bridge.git"

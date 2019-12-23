@@ -5,11 +5,16 @@ const argv = require("minimist")(process.argv.split(2));
 const tcp = require("net");
 const tls = require("tls");
 
-const listen = (wsport, tcpport, { verbose = false, secure = false }) => {
+const listen = (
+  wsport,
+  tcpport,
+  { verbose = false, secure = false, keepalive = false }
+) => {
   const wss = new WebSocket.server({ port: wsport }, () => {
-    console.log(`WebSocket port listening: ${wsport}`);
+    console.info(`WebSocket port listening: ${wsport}`);
     if (verbose) console.log("Verbose mode activated.");
-    if (secure) console.log("Secure mode activated.");
+    if (verbose && secure) console.log("Secure mode activated.");
+    if (verbose && keepalive) console.log("Keepalive mode activated");
   });
 
   // handle a new WS connection
@@ -35,7 +40,12 @@ const listen = (wsport, tcpport, { verbose = false, secure = false }) => {
     }
 
     // Bridge commucation
-    tcpSocket.on("data", data => ws.send(data.toString()));
+    tcpSocket.on("data", buff => {
+      if (keepalive) {
+        buff = buff.filter(byte => byte !== 241 && byte !== 255);
+        ws.send(buff.toString());
+      }
+    });
     ws.on("message", mess => tcpSocket.write(mess + "\r\n"));
 
     // Handle closing
@@ -52,4 +62,8 @@ wsp = argv.websocket ?? 4203;
 tel = argv.telnet ?? 4201;
 
 // Start the server!
-listen(wsp, tel, { verbose: argv.v, secure: argv.tls });
+listen(wsp, tel, {
+  verbose: argv.v,
+  secure: argv.tls,
+  keepalive: argv.keepalive
+});
