@@ -1,6 +1,6 @@
 {
   "name": "@digibear/socket-bridge",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Websocket bridge between WS and TCP",
   "main": "ws-bridge.js",
   "bin": {
