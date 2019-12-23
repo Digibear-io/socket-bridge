@@ -4,10 +4,10 @@ A simple library to bridge a connection between a TCP/TLS and a Websocket connec
 
 ## install
 
-`npm i -g @digibear/ws-bridge`
+`npm i -g @digibear/socket-bridge`
 
 ## Usage
 
-`ws-bridge --websocket 2000 --telnet 2001`
+`wsb --connect --websocket 2000 --telnet 2001`
 
-If no ports are supplied then it defaults to `4201` for tcp and `4204` for the Websocket port.
+If no ports are supplied then it defaults to `4201` for tcp and `4204` for the Websocket port. For a full list of flags and toggles use. `wsb --help` or just `wsb`

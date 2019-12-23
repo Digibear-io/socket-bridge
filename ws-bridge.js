@@ -13,11 +13,10 @@ Connects a TCP or TLS port to a Websocket connection. if not telnet port
 is supplied the bridge will default to 4201.  If no Websocket port is 
 defined it will default to 4203.
 
-usage: ws-bridge [-c|--connect][--help][--telnet <port>][--websocket <port>]
-                 [-v --verbose][-a --ansi2html][-j --json]
-                 [-k --keepalive][-t --tls]
-                 
-                 
+usage: wsb  [-c|--connect][--help][--telnet <port>][--websocket <port>]
+            [-v --verbose][-a --ansi2html][-j --json][-k --keepalive]
+            [-t --tls]
+                      
 2019 Lemuel Canady, Jr
 `.trim();
 
