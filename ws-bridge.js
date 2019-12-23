@@ -14,7 +14,7 @@ is supplied the bridge will default to 4201.  If no Websocket port is
 defined it will default to 4203.
 
 usage: ws-bridge [-c|--connect][--help][--telnet <port>][--websocket <port>]
-                 [-v --verbose][-a --ansi-to-html][-j --json]
+                 [-v --verbose][-a --ansi2html][-j --json]
                  [-k --keepalive][-t --tls]
                  
                  
@@ -113,7 +113,7 @@ if (argv.connect || argv.c) {
     secure: argv.tls || argv.t,
     keepalive: argv.keepalive || argv.k,
     json: argv.j || argv.json,
-    html: argv.a || argv.ansi - to - html
+    html: argv.a || argv.ansi2html
   });
 } else {
   console.log(help);
