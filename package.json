@@ -4,7 +4,8 @@
   "description": "A Websocket bridge between WS and TCP",
   "main": "ws-bridge.js",
   "bin": {
-    "ws-bridge": "ws-bridge.js"
+    "socket-bridge": "ws-bridge.js",
+    "wsb": "ws-bridge.js"
   },
   "scripts": {},
   "repository": {
