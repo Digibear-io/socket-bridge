@@ -1,6 +1,6 @@
 # @digibear/socket-bridge
 
-A simple library to bridge a connection between a TCP/TLS and a Websocket connection. Built specificially for [RhostMush](www.rhostmush.com) but it should happily sit alongside any TCP/TLS server.
+A simple library to bridge a connection between a TCP/TLS and a Websocket connection. Built specificially for [RhostMush](http://www.rhostmush.com) but it should happily sit alongside any TCP/TLS server.
 
 ## install
 

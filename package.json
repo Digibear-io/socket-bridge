@@ -2,15 +2,15 @@
   "name": "@digibear/socket-bridge",
   "version": "1.0.4",
   "description": "A Websocket bridge between WS and TCP",
-  "main": "ws-bridge.js",
+  "main": "socket-bridge.js",
   "bin": {
-    "socket-bridge": "ws-bridge.js",
-    "wsb": "ws-bridge.js"
+    "socket-bridge": "socket-bridge.js",
+    "wsb": "socket-bridge.js"
   },
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Digibear-io/ws-bridge.git"
+    "url": "git+https://github.com/Digibear-io/socket-bridge.git"
   },
   "keywords": [
     "MUX",
@@ -25,9 +25,9 @@
   "author": "Lemuel Canady, Jr",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Digibear-io/ws-bridge/issues"
+    "url": "https://github.com/Digibear-io/socket-bridge/issues"
   },
-  "homepage": "https://github.com/Digibear-io/ws-bridge#readme",
+  "homepage": "https://github.com/Digibear-io/socket-bridge#readme",
   "dependencies": {
     "anser": "^1.4.9",
     "minimist": "^1.2.0",
